@@ -1294,7 +1294,9 @@ footer p {
   <a class="nav-brand" href="#" onclick="showPage('home')">🐪 The Long Road East</a>
   <ul class="nav-links">
     <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
-    <li><a href="#" onclick="showPage('route')" id="nav-route">Route</a></li>
+    <li><a href="#" onclick="showPage('routes')" id="nav-routes">Routes</a></li>
+    <li><a href="#" onclick="showPage('route')" id="nav-route">Southern Route</a></li>
+    <li><a href="#" onclick="showPage('steppe')" id="nav-steppe">Steppe Route</a></li>
     <li><a href="#" onclick="showPage('history')" id="nav-history">History</a></li>
     <li><a href="#" onclick="showPage('expeditions')" id="nav-expeditions">Expeditions</a></li>
     <li><a href="#" onclick="showPage('planning')" id="nav-planning">Planning</a></li>
@@ -1419,6 +1421,46 @@ footer p {
     </div>
   </section>
 
+  <!-- STEPPE PERSONAL CONNECTION -->
+  <section class="silk-section" style="background: linear-gradient(180deg, #f0e8d0 0%, var(--parchment-dark) 100%); border-top: 2px solid var(--parchment-deep);">
+    <div class="story-grid">
+      <div class="story-ornament" style="background: linear-gradient(135deg, rgba(42,90,30,0.08), rgba(201,146,42,0.05)); border: 1px solid rgba(42,90,30,0.2);">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🌾</div>
+        <p class="ornament-text" style="font-size:1rem;">
+          "The Steppe was the interstate highway of the ancient world — a sea of grass connecting civilisations separated by thousands of miles."
+        </p>
+        <p class="ornament-attr" style="color: #4a7a30; margin-top:1rem;">— The Forgotten Silk Road</p>
+        <br>
+        <p style="font-size:0.85rem; color: var(--ink-light); line-height:1.6;">
+          Where the southern route had caravanserais and oasis cities, the steppe had yurts, horses, and the endless open sky. 
+          Two worlds, one great highway across Eurasia.
+        </p>
+      </div>
+      <div class="story-text">
+        <h2 style="color: #2a5a1e;">A Love of the<br>Open Steppe</h2>
+        <p>
+          I have always been fascinated by the great Eurasian steppes — the vast grasslands that gave rise to nomadic cultures, 
+          mounted empires, and some of history's most dynamic peoples. The Mongols, the Turkic migrations, and the countless 
+          nomadic tribes who adapted to life on the open steppe have long captured my imagination.
+        </p>
+        <p>
+          Recently, I discovered the <em>forgotten Steppe Route of Kazakhstan</em> — a northern branch of the Silk Road that 
+          crossed the great grasslands of Central Asia. Unlike the caravan cities and caravanserais of the south, this was 
+          a highway of horses, nomads, and endless horizons. Goods, ideas, technologies, and entire cultures moved across 
+          these open lands, linking Europe and Asia long before the modern world existed.
+        </p>
+        <p>
+          Today, the Steppe Route has become one of the most exciting additions to my dream journey. It offers a chance to 
+          experience a side of the Silk Road that many travellers overlook — a world of immense skies, ancient migrations, 
+          and the echoes of peoples who shaped the course of Eurasian history.
+        </p>
+        <div style="margin-top: 1.5rem;">
+          <a href="#" onclick="showPage('steppe')" style="display:inline-flex; align-items:center; gap:0.6rem; font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color: #2a5a1e; background: rgba(42,90,30,0.1); border: 1px solid rgba(42,90,30,0.3); padding: 0.7rem 1.5rem; text-decoration:none; transition: all 0.2s;" onmouseover="this.style.background='rgba(42,90,30,0.2)'" onmouseout="this.style.background='rgba(42,90,30,0.1)'">Explore the Steppe Route →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- QUICK LINKS -->
   <section class="silk-section dark">
     <div class="section-header">
@@ -1462,12 +1504,100 @@ footer p {
 </div>
 
 <!-- ══════════════════════════════════════
-     ROUTE PAGE
+     ROUTES HUB PAGE
+══════════════════════════════════════ -->
+<div id="page-routes" class="page">
+  <div style="background: linear-gradient(180deg, #0d0705 0%, #1a0e08 100%); padding: 100px 2rem 4rem; text-align:center; border-bottom: 1px solid rgba(201,146,42,0.2);">
+    <span style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.45em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1rem;">Choose Your Path</span>
+    <h2 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:clamp(1.8rem,4vw,3rem); margin-bottom:0.8rem;">Two Roads Across Eurasia</h2>
+    <div style="display:flex; align-items:center; justify-content:center; gap:0.8rem; margin:1rem 0; color:var(--gold);">
+      <div style="height:1px; width:80px; background:var(--gold); opacity:0.5;"></div>✦<div style="height:1px; width:80px; background:var(--gold); opacity:0.5;"></div>
+    </div>
+    <p style="color:var(--parchment-dark); font-style:italic; font-size:1.1rem; max-width:640px; margin:0 auto; opacity:0.8; line-height:1.8;">
+      The Silk Road was never one path. It was a living web of routes threading across deserts, mountains, 
+      and open grasslands. Here are the two great highways I am exploring.
+    </p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:1200px; margin: 3rem auto; padding: 0 2rem;">
+
+    <!-- SOUTHERN CARD -->
+    <div style="background: linear-gradient(135deg, #1a0e08 0%, #2c1810 100%); border: 1px solid rgba(201,146,42,0.25); padding:3rem 2.5rem; position:relative; overflow:hidden; cursor:pointer; transition: all 0.3s;" onclick="showPage('route')" onmouseover="this.style.borderColor='rgba(201,146,42,0.6)'" onmouseout="this.style.borderColor='rgba(201,146,42,0.25)'">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-bright));"></div>
+      <div style="font-size:3.5rem; margin-bottom:1.5rem;">🐪</div>
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem;">Route One</div>
+      <h3 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:1.5rem; margin-bottom:0.4rem; line-height:1.3;">The Southern<br>Silk Road</h3>
+      <p style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:var(--gold-bright); margin-bottom:1.5rem; font-style:italic;">The Caravan Highway of Eurasia</p>
+      <p style="color:var(--parchment-dark); font-size:0.95rem; line-height:1.8; margin-bottom:2rem; opacity:0.85;">
+        This is the famous route most people imagine when they think of the Silk Road — the great caravan highway 
+        winding through oasis cities, caravanserais, and Islamic architectural marvels. From the Golden Horn of 
+        Constantinople to the ancient capital of Xi'an, this was the road of Marco Polo, Ibn Battuta, merchants, 
+        pilgrims, and emperors.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">CARAVANS</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">OASIS CITIES</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">ISLAM & TRADE</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">20 CITIES</span>
+      </div>
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-bright); display:inline-flex; align-items:center; gap:0.5rem;">Explore Route →</div>
+    </div>
+
+    <!-- STEPPE CARD -->
+    <div style="background: linear-gradient(135deg, #0a1a08 0%, #1a2e10 100%); border: 1px solid rgba(80,140,50,0.25); padding:3rem 2.5rem; position:relative; overflow:hidden; cursor:pointer; transition: all 0.3s;" onclick="showPage('steppe')" onmouseover="this.style.borderColor='rgba(80,140,50,0.6)'" onmouseout="this.style.borderColor='rgba(80,140,50,0.25)'">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#4a8a28,#80c040);"></div>
+      <div style="font-size:3.5rem; margin-bottom:1.5rem;">🌾</div>
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase; color:#80c040; margin-bottom:0.6rem;">Route Two</div>
+      <h3 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:1.5rem; margin-bottom:0.4rem; line-height:1.3;">The Northern<br>Steppe Route</h3>
+      <p style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:#a0e060; margin-bottom:1.5rem; font-style:italic;">The Forgotten Silk Road</p>
+      <p style="color:var(--parchment-dark); font-size:0.95rem; line-height:1.8; margin-bottom:2rem; opacity:0.85;">
+        Less known but equally extraordinary — the Steppe Route crossed the vast grasslands of Kazakhstan, linking 
+        China and Eastern Europe across an ocean of grass. This was the road of nomads and horses, of Mongol 
+        riders and Turkic migrations. No caravanserais here — only yurts, open skies, and the thunder of hooves.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">NOMADS</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">HORSES</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">MONGOLS</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">KAZAKHSTAN</span>
+      </div>
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:#a0e060; display:inline-flex; align-items:center; gap:0.5rem;">Explore Route →</div>
+    </div>
+  </div>
+
+  <!-- COMPARISON STRIP -->
+  <div style="background: rgba(255,255,255,0.02); border-top:1px solid rgba(201,146,42,0.1); border-bottom:1px solid rgba(201,146,42,0.1); padding:2.5rem 2rem; max-width:1100px; margin:0 auto 3rem;">
+    <div style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.35em; text-transform:uppercase; color:var(--gold); text-align:center; margin-bottom:2rem;">At A Glance</div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:2rem; text-align:center;">
+      <div>
+        <div style="font-family:'Cinzel',serif; color:var(--gold); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1rem;">Feature</div>
+        <div style="color:var(--parchment-dark); font-size:0.9rem; line-height:2.4; opacity:0.7; border-right:1px solid rgba(255,255,255,0.05);">Terrain<br>Transport<br>Shelter<br>Key Figures<br>Best For</div>
+      </div>
+      <div>
+        <div style="font-family:'Cinzel',serif; color:var(--gold-bright); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1rem;">🐪 Southern Road</div>
+        <div style="color:var(--parchment-dark); font-size:0.9rem; line-height:2.4; opacity:0.85;">Desert & mountains<br>Camels<br>Caravanserais & inns<br>Marco Polo, Ibn Battuta<br>Architecture & history</div>
+      </div>
+      <div>
+        <div style="font-family:'Cinzel',serif; color:#80c040; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1rem;">🌾 Northern Steppe</div>
+        <div style="color:var(--parchment-dark); font-size:0.9rem; line-height:2.4; opacity:0.85;">Open grassland<br>Horses<br>Yurts & nomad camps<br>Genghis Khan, Timur<br>Landscape & culture</div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:#0d0705; padding:2rem; text-align:center; border-top:1px solid rgba(201,146,42,0.2);">
+    <p style="color:var(--parchment-dark); font-style:italic; opacity:0.5; font-size:0.85rem;">Two roads, one dream — both leading to the heart of Eurasian history</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     ROUTE PAGE (SOUTHERN SILK ROAD)
 ══════════════════════════════════════ -->
 <div id="page-route" class="page">
   <div class="route-hero">
-    <h2>The Route Explorer</h2>
-    <p>From the Golden Horn to the Jade Gate — 20 cities across the ancient world</p>
+    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem;">Route One</div>
+    <h2>The Southern Silk Road</h2>
+    <p style="font-family:'Cinzel',serif; font-size:0.9rem; letter-spacing:0.1em; color:var(--gold-bright); font-style:italic; margin-bottom:0.5rem;">The Caravan Highway of Eurasia</p>
+    <p style="max-width:640px; margin:0 auto; opacity:0.7;">This is the famous route most people imagine when they think of the Silk Road — the great caravan highway of oasis cities, caravanserais, merchants, and pilgrims, stretching from the Golden Horn to the gates of China.</p>
   </div>
 
   <!-- INTERACTIVE MAP -->
@@ -2446,8 +2576,10 @@ async function loadCityImage(i) {
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
-  document.getElementById('nav-' + name).classList.add('active');
+  const pageEl = document.getElementById('page-' + name);
+  const navEl = document.getElementById('nav-' + name);
+  if (pageEl) pageEl.classList.add('active');
+  if (navEl) navEl.classList.add('active');
   window.scrollTo(0, 0);
   if (name === 'route') buildCityCards();
 }
@@ -2541,5 +2673,293 @@ if (slider) {
 // ── INIT ──
 calculateBudget();
 </script>
+
+<!-- ══════════════════════════════════════
+     ROUTES HUB PAGE
+══════════════════════════════════════ -->
+<div id="page-routes" class="page">
+  <div style="background: linear-gradient(180deg, #0d0705 0%, #1a0e08 100%); padding: 100px 2rem 4rem; text-align:center; border-bottom: 1px solid rgba(201,146,42,0.2);">
+    <span style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.45em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1rem;">Choose Your Path</span>
+    <h2 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:clamp(1.8rem,4vw,3rem); margin-bottom:0.8rem;">Two Roads Across Eurasia</h2>
+    <div style="display:flex; align-items:center; justify-content:center; gap:0.8rem; margin:1rem 0; color:var(--gold);">
+      <div style="height:1px; width:80px; background:var(--gold); opacity:0.5;"></div>✦<div style="height:1px; width:80px; background:var(--gold); opacity:0.5;"></div>
+    </div>
+    <p style="color:var(--parchment-dark); font-style:italic; font-size:1.1rem; max-width:640px; margin:0 auto; opacity:0.8; line-height:1.8;">
+      The Silk Road was never one path. It was a living web of routes threading across deserts, mountains, 
+      and open grasslands. Here are the two great highways I am exploring.
+    </p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:1200px; margin: 3rem auto; padding: 0 2rem;">
+    <div style="background:linear-gradient(135deg,#1a0e08 0%,#2c1810 100%); border:1px solid rgba(201,146,42,0.25); padding:3rem 2.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all 0.3s;" onclick="showPage('route')" onmouseover="this.style.borderColor='rgba(201,146,42,0.6)'" onmouseout="this.style.borderColor='rgba(201,146,42,0.25)'">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-bright));"></div>
+      <div style="font-size:3.5rem; margin-bottom:1.5rem;">🐪</div>
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem;">Route One</div>
+      <h3 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:1.5rem; margin-bottom:0.4rem; line-height:1.3;">The Southern<br>Silk Road</h3>
+      <p style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:var(--gold-bright); margin-bottom:1.5rem; font-style:italic;">The Caravan Highway of Eurasia</p>
+      <p style="color:var(--parchment-dark); font-size:0.95rem; line-height:1.8; margin-bottom:2rem; opacity:0.85;">This is the famous route most people imagine when they think of the Silk Road — the great caravan highway winding through oasis cities, caravanserais, and Islamic architectural marvels. From Istanbul to Xi'an, this was the road of Marco Polo, Ibn Battuta, merchants, pilgrims, and emperors.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">CARAVANS</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">OASIS CITIES</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">ISLAM & TRADE</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(201,146,42,0.1); border:1px solid rgba(201,146,42,0.25); color:var(--gold);">20 CITIES</span>
+      </div>
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-bright);">Explore Route →</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#0a1a08 0%,#1a2e10 100%); border:1px solid rgba(80,140,50,0.25); padding:3rem 2.5rem; position:relative; overflow:hidden; cursor:pointer; transition:all 0.3s;" onclick="showPage('steppe')" onmouseover="this.style.borderColor='rgba(80,140,50,0.6)'" onmouseout="this.style.borderColor='rgba(80,140,50,0.25)'">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#4a8a28,#80c040);"></div>
+      <div style="font-size:3.5rem; margin-bottom:1.5rem;">🌾</div>
+      <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.4em; text-transform:uppercase; color:#80c040; margin-bottom:0.6rem;">Route Two</div>
+      <h3 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:1.5rem; margin-bottom:0.4rem; line-height:1.3;">The Northern<br>Steppe Route</h3>
+      <p style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:#a0e060; margin-bottom:1.5rem; font-style:italic;">The Forgotten Silk Road</p>
+      <p style="color:var(--parchment-dark); font-size:0.95rem; line-height:1.8; margin-bottom:2rem; opacity:0.85;">Less known but equally extraordinary — the Steppe Route crossed the vast grasslands of Kazakhstan, linking China and Eastern Europe. This was the road of nomads and horses, Mongol riders and Turkic migrations. No caravanserais here — only yurts, open skies, and the thunder of hooves.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">NOMADS</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">HORSES</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">MONGOLS</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; padding:0.3rem 0.7rem; background:rgba(80,140,50,0.1); border:1px solid rgba(80,140,50,0.25); color:#80c040;">KAZAKHSTAN</span>
+      </div>
+      <div style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:#a0e060;">Explore Route →</div>
+    </div>
+  </div>
+
+  <div style="background:rgba(255,255,255,0.02); border-top:1px solid rgba(201,146,42,0.1); border-bottom:1px solid rgba(201,146,42,0.1); padding:2.5rem 2rem; max-width:1100px; margin:0 auto 3rem;">
+    <div style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.35em; text-transform:uppercase; color:var(--gold); text-align:center; margin-bottom:2rem;">At A Glance</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem; text-align:center;">
+      <div>
+        <div style="font-family:'Cinzel',serif; color:var(--gold); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1rem;">Feature</div>
+        <div style="color:var(--parchment-dark); font-size:0.9rem; line-height:2.5; opacity:0.7;">Terrain<br>Transport<br>Shelter<br>Key Figures<br>Best For</div>
+      </div>
+      <div>
+        <div style="font-family:'Cinzel',serif; color:var(--gold-bright); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1rem;">🐪 Southern Road</div>
+        <div style="color:var(--parchment-dark); font-size:0.9rem; line-height:2.5; opacity:0.85;">Desert & mountains<br>Camels<br>Caravanserais<br>Marco Polo · Ibn Battuta<br>Architecture & cities</div>
+      </div>
+      <div>
+        <div style="font-family:'Cinzel',serif; color:#80c040; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1rem;">🌾 Northern Steppe</div>
+        <div style="color:var(--parchment-dark); font-size:0.9rem; line-height:2.5; opacity:0.85;">Open grassland<br>Horses<br>Yurts & camps<br>Genghis Khan · Timur<br>Landscape & culture</div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:#0d0705; padding:2rem; text-align:center; border-top:1px solid rgba(201,146,42,0.2);">
+    <p style="color:var(--parchment-dark); font-style:italic; opacity:0.5; font-size:0.85rem;">Two roads, one dream — both leading to the heart of Eurasian history</p>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════
+     STEPPE ROUTE PAGE
+══════════════════════════════════════ -->
+<div id="page-steppe" class="page">
+
+  <div style="min-height:50vh; background:linear-gradient(180deg,rgba(10,26,8,0.95) 0%,rgba(20,40,12,0.88) 50%,rgba(10,26,8,0.97) 100%); background-color:#0a1a08; display:flex; align-items:center; justify-content:center; text-align:center; padding:100px 2rem 4rem; position:relative; overflow:hidden; border-bottom:1px solid rgba(80,140,50,0.2);">
+    <div style="position:absolute; bottom:0; left:0; right:0; height:70px; background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 70%22%3E%3Cpath d=%22M0,70 Q30,15 60,40 Q90,60 120,20 Q150,5 180,35 Q210,55 240,15 Q270,0 300,30 Q330,50 360,10 Q390,0 420,35 Q450,58 480,18 Q510,2 540,42 Q570,62 600,25 Q630,8 660,48 Q690,65 720,20 Q750,2 780,42 Q810,62 840,15 Q870,0 900,38 Q930,58 960,12 Q990,0 1020,38 Q1050,62 1080,15 Q1110,0 1140,38 Q1170,58 1200,25 L1200,70Z%22 fill=%22%230a1a08%22/%3E%3C/svg%3E') bottom/cover no-repeat; z-index:1;"></div>
+    <div style="position:relative; z-index:2; max-width:800px;">
+      <div style="font-family:'Cinzel',serif; color:#80c040; font-size:0.7rem; letter-spacing:0.45em; text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; justify-content:center; gap:1rem;"><span style="font-size:0.6rem;">✦</span>Route Two<span style="font-size:0.6rem;">✦</span></div>
+      <h1 style="font-family:'Cinzel Decorative',serif; font-size:clamp(2rem,5vw,4rem); color:var(--parchment); line-height:1.15; margin-bottom:0.5rem; text-shadow:0 4px 20px rgba(0,0,0,0.5);">The Northern <span style="color:#a0e060;">Steppe</span> Route</h1>
+      <p style="font-family:'EB Garamond',serif; font-style:italic; color:var(--parchment-dark); font-size:clamp(1rem,2vw,1.4rem); margin-bottom:2.5rem; opacity:0.85;">The Forgotten Silk Road</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin:1.5rem 0; color:#80c040;"><div style="height:1px; width:100px; background:linear-gradient(90deg,transparent,#80c040);"></div>🌾<div style="height:1px; width:100px; background:linear-gradient(90deg,#80c040,transparent);"></div></div>
+      <p style="color:var(--parchment-dark); font-size:1.05rem; line-height:1.9; opacity:0.8; max-width:600px; margin:0 auto;">Forget the caravanserais and the oasis cities. Out here, the road is the horizon itself — a thousand miles of waving grass, eagle-haunted sky, and the distant thunder of hooves. This is the highway that history forgot.</p>
+    </div>
+  </div>
+
+  <!-- THE GREAT GRASSLAND HIGHWAY -->
+  <div style="background:linear-gradient(180deg,#0a1a08,#0f2010); padding:4rem 2rem; border-bottom:1px solid rgba(80,140,50,0.15);">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.4em; text-transform:uppercase; color:#80c040; display:block; margin-bottom:0.8rem;">The Great Highway</span>
+        <h2 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:clamp(1.4rem,3vw,2.2rem); margin-bottom:1rem;">The Great Grassland Highway</h2>
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.8rem; color:#80c040; margin:1rem 0;"><div style="height:1px; width:60px; background:#80c040; opacity:0.4;"></div>✦<div style="height:1px; width:60px; background:#80c040; opacity:0.4;"></div></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+        <div>
+          <p style="color:var(--parchment-dark); font-size:1rem; line-height:1.9; margin-bottom:1.2rem; opacity:0.88;">While merchants struggled with camels through the Iranian deserts and Afghan mountain passes, a parallel world existed to the north. Across the vast Eurasian steppe — the great grassland belt stretching from Hungary to Manchuria — a different kind of Silk Road operated.</p>
+          <p style="color:var(--parchment-dark); font-size:1rem; line-height:1.9; margin-bottom:1.2rem; opacity:0.88;"><em style="color:#a0e060;">Nomadic tribes acted as intermediaries</em>, controlling movement and trade across the open grasslands. Where camels were the ship of the southern desert, <em style="color:#a0e060;">horses were the engine of the northern steppe</em>. Entire tribes controlled the movement of goods, ideas, and peoples across thousands of miles.</p>
+          <p style="color:var(--parchment-dark); font-size:1rem; line-height:1.9; opacity:0.88;">The route linked <strong style="color:var(--parchment);">China, Mongolia, Kazakhstan, Russia, and Eastern Europe</strong> in a continuous chain of exchange long before any empire was powerful enough to control the whole.</p>
+        </div>
+        <div style="background:rgba(80,140,50,0.06); border:1px solid rgba(80,140,50,0.2); padding:2.5rem; text-align:center;">
+          <div style="font-size:3rem; margin-bottom:1rem; opacity:0.8;">🌾</div>
+          <p style="font-style:italic; font-size:1.15rem; line-height:1.8; color:var(--parchment-dark); opacity:0.9; margin-bottom:1rem;">"The Steppe was the interstate highway of the ancient world — a sea of grass connecting civilisations separated by thousands of miles."</p>
+          <p style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; text-transform:uppercase;">— The Forgotten Silk Road</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY THE STEPPE MATTERS -->
+  <div style="background:#0d1a0a; padding:4rem 2rem; border-bottom:1px solid rgba(80,140,50,0.15);">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.4em; text-transform:uppercase; color:#80c040; display:block; margin-bottom:0.8rem;">Significance</span>
+        <h2 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:clamp(1.2rem,2.5vw,1.9rem);">Why the Steppe Matters</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem;">
+        <div style="background:rgba(80,140,50,0.06); border:1px solid rgba(80,140,50,0.2); border-top:3px solid #80c040; padding:2rem; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+          <div style="font-size:2.5rem; margin-bottom:1rem;">🐎</div>
+          <h3 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.8rem; letter-spacing:0.05em;">Horse Culture</h3>
+          <p style="color:var(--parchment-dark); font-size:0.9rem; line-height:1.7; opacity:0.85;">The steppe was the birthplace of mounted warfare. Horse riding, horse archery, and military innovations born here spread across Eurasia, reshaping armies from China to Rome.</p>
+        </div>
+        <div style="background:rgba(80,140,50,0.06); border:1px solid rgba(80,140,50,0.2); border-top:3px solid #a0e060; padding:2rem; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+          <div style="font-size:2.5rem; margin-bottom:1rem;">⚔️</div>
+          <h3 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.8rem; letter-spacing:0.05em;">The Mongols</h3>
+          <p style="color:var(--parchment-dark); font-size:0.9rem; line-height:1.7; opacity:0.85;">Without the Steppe Route, there would have been no Mongol Empire. The open grasslands were both the birthplace and the highway of history's greatest land empire, briefly unifying Eurasia from Korea to Hungary.</p>
+        </div>
+        <div style="background:rgba(80,140,50,0.06); border:1px solid rgba(80,140,50,0.2); border-top:3px solid #60b020; padding:2rem; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
+          <div style="font-size:2.5rem; margin-bottom:1rem;">🌍</div>
+          <h3 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.8rem; letter-spacing:0.05em;">Cultural Exchange</h3>
+          <p style="color:var(--parchment-dark); font-size:0.9rem; line-height:1.7; opacity:0.85;">Ideas, religions, technologies, languages, and even diseases crossed Eurasia here. The steppe was a two-way conveyor belt of civilisation, carrying everything from iron-working to Buddhism across the continent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEPPE ITINERARY -->
+  <div style="background:linear-gradient(180deg,#0f2010,#0a1a08); padding:4rem 2rem; border-bottom:1px solid rgba(80,140,50,0.15);">
+    <div style="max-width:900px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.4em; text-transform:uppercase; color:#80c040; display:block; margin-bottom:0.8rem;">Personal Journey</span>
+        <h2 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:clamp(1.2rem,2.5vw,1.9rem);">My Steppe Route Itinerary</h2>
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.8rem; color:#80c040; margin:1rem 0;"><div style="height:1px; width:60px; background:#80c040; opacity:0.4;"></div>✦<div style="height:1px; width:60px; background:#80c040; opacity:0.4;"></div></div>
+      </div>
+      <div style="position:relative; padding-left:2.5rem;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,#80c040,#4a8a28,#80c040);"></div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#80c040; border:2px solid #0f2010; box-shadow:0 0 8px #80c040;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 1–3</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Almaty</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">Gateway to the Kazakh steppe. Explore the bazaars, the Zenkov Cathedral, and the extraordinary Central State Museum. Take the cable car up into the Tien Shan mountains that frame the city to the south.</p>
+        </div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#a0e060; border:2px solid #0f2010;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 4–5</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Train Across the Kazakh Steppe</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">One of the world's great train journeys. For two days the landscape barely changes — an endless, humbling horizon of waving grass and enormous sky. This is what the ancient nomads saw. Bring a journal.</p>
+        </div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#80c040; border:2px solid #0f2010;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 6–7</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Turkistan</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">The holiest city in Kazakhstan — home of the Mausoleum of Khoja Ahmed Yasawi, one of Central Asia's greatest architectural masterpieces, built by Timur in the 14th century.</p>
+        </div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#60b020; border:2px solid #0f2010;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 8</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Otrar</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">The ruined city where Genghis Khan's ambassador was executed in 1218 — the act that triggered the Mongol conquest of the Islamic world. Walking through these ruins, you stand at the pivot point of medieval history.</p>
+        </div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#80c040; border:2px solid #0f2010;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 9–10</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Shymkent</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">Kazakhstan's third-largest city and a crossroads of the steppe and the settled world. The old bazaar and nearby archaeological sites connect steppe culture with the ancient civilisations of Sogdia.</p>
+        </div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#a0e060; border:2px solid #0f2010;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 11</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Tashkent</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">Where the steppe meets the settled Silk Road. The two routes converge here. The Khast Imam complex preserves one of the world's oldest Qurans.</p>
+        </div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#80c040; border:2px solid #0f2010; box-shadow:0 0 8px #80c040;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 12–14</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Samarkand</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">The jewel of both routes. Timur's capital sits where steppe and caravan roads meet. The Registan, Shah-i-Zinda, and Bibi-Khanym Mosque are the pinnacle of both journeys. Allow three full days.</p>
+        </div>
+        <div style="position:relative; margin-bottom:2.2rem; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#60b020; border:2px solid #0f2010;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 15–17</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Bukhara</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">The final great city of Central Asia. Bukhara's Kalon Minaret, Ark fortress, and extraordinary covered bazaars bring the journey full circle — the steppe route dissolves into the southern caravan world.</p>
+        </div>
+        <div style="position:relative; padding-left:1.5rem;">
+          <div style="position:absolute; left:-2.4rem; top:0.3rem; width:12px; height:12px; border-radius:50%; background:#4a8a28; border:2px solid #0f2010;"></div>
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#80c040; margin-bottom:0.2rem;">DAY 18</div>
+          <h4 style="font-family:'Cinzel',serif; color:var(--parchment); font-size:1rem; margin-bottom:0.4rem;">Return Home</h4>
+          <p style="color:var(--parchment-dark); font-size:0.88rem; line-height:1.7; opacity:0.8;">Fly home from Tashkent or Bukhara. You leave carrying two worlds: the vast open sky of the steppe and the gilded domes of the ancient caravan cities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JULY VS DECEMBER -->
+  <div style="background:#0a1a08; padding:4rem 2rem; border-bottom:1px solid rgba(80,140,50,0.15);">
+    <div style="max-width:1000px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <span style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.4em; text-transform:uppercase; color:#80c040; display:block; margin-bottom:0.8rem;">When to Go</span>
+        <h2 style="font-family:'Cinzel Decorative',serif; color:var(--parchment); font-size:clamp(1.2rem,2.5vw,1.9rem);">July vs December</h2>
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.8rem; color:#80c040; margin:1rem 0;"><div style="height:1px; width:60px; background:#80c040; opacity:0.4;"></div>✦<div style="height:1px; width:60px; background:#80c040; opacity:0.4;"></div></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:2rem;">
+        <div style="background:rgba(201,146,42,0.05); border:1px solid rgba(201,146,42,0.2); padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:0.8rem;">☀️</div>
+          <h3 style="font-family:'Cinzel',serif; color:var(--gold-bright); font-size:1rem; margin-bottom:1.2rem;">July</h3>
+          <div style="margin-bottom:1.2rem;">
+            <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.2em; color:#80c040; text-transform:uppercase; margin-bottom:0.6rem;">Advantages</div>
+            <ul style="list-style:none; padding:0;">
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Green steppe grasslands at their most vivid</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Horses and yurts everywhere</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Long daylight hours</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Strong historical atmosphere</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Feels closest to the traditional Silk Road experience</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.2em; color:var(--crimson); text-transform:uppercase; margin-bottom:0.6rem;">Disadvantages</div>
+            <ul style="list-style:none; padding:0;">
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative; opacity:0.75;"><span style="position:absolute;left:0;color:var(--crimson);">−</span> Extreme heat in Uzbekistan (40°C+)</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; position:relative; opacity:0.75;"><span style="position:absolute;left:0;color:var(--crimson);">−</span> Midday sightseeing can be very difficult</li>
+            </ul>
+          </div>
+        </div>
+        <div style="background:rgba(26,58,92,0.15); border:1px solid rgba(26,58,92,0.3); padding:2rem;">
+          <div style="font-size:2rem; margin-bottom:0.8rem;">❄️</div>
+          <h3 style="font-family:'Cinzel',serif; color:#6aacdc; font-size:1rem; margin-bottom:1.2rem;">December</h3>
+          <div style="margin-bottom:1.2rem;">
+            <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.2em; color:#80c040; text-transform:uppercase; margin-bottom:0.6rem;">Advantages</div>
+            <ul style="list-style:none; padding:0;">
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Comfortable walking temperatures</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Far fewer tourists at the great sites</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; position:relative;"><span style="position:absolute;left:0;color:#80c040;">+</span> Noticeably lower hotel costs</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.2em; color:var(--crimson); text-transform:uppercase; margin-bottom:0.6rem;">Disadvantages</div>
+            <ul style="list-style:none; padding:0;">
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05); position:relative; opacity:0.75;"><span style="position:absolute;left:0;color:var(--crimson);">−</span> Cold steppe weather</li>
+              <li style="color:var(--parchment-dark); font-size:0.88rem; padding:0.3rem 0 0.3rem 1.2rem; position:relative; opacity:0.75;"><span style="position:absolute;left:0;color:var(--crimson);">−</span> Shorter daylight hours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="background:rgba(80,140,50,0.08); border:1px solid rgba(80,140,50,0.25); padding:1.5rem 2rem; display:flex; gap:2rem; flex-wrap:wrap;">
+        <div style="flex:1; min-width:200px;">
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#6aacdc; text-transform:uppercase; margin-bottom:0.4rem;">❄️ Comfortable Choice</div>
+          <p style="color:var(--parchment-dark); font-size:0.9rem; line-height:1.6; opacity:0.85;"><strong style="color:var(--parchment);">December</strong> is the more comfortable trip — easier walking, lower costs, quieter sites.</p>
+        </div>
+        <div style="width:1px; background:rgba(80,140,50,0.2); align-self:stretch;"></div>
+        <div style="flex:1; min-width:200px;">
+          <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; color:#a0e060; text-transform:uppercase; margin-bottom:0.4rem;">☀️ Immersive Choice</div>
+          <p style="color:var(--parchment-dark); font-size:0.9rem; line-height:1.6; opacity:0.85;"><strong style="color:var(--parchment);">July</strong> is the more immersive Silk Road experience — the steppe is alive, the skies enormous, the atmosphere unrepeatable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SYMBOLS -->
+  <div style="background:linear-gradient(135deg,#0a1a08,#0d1f0a); padding:3rem 2rem; text-align:center; border-bottom:1px solid rgba(80,140,50,0.15);">
+    <div style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.35em; text-transform:uppercase; color:#80c040; margin-bottom:2rem;">Symbols of the Steppe</div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2.5rem; max-width:800px; margin:0 auto;">
+      <div style="text-align:center;"><div style="font-size:2.5rem; margin-bottom:0.5rem;">🐎</div><div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--parchment-dark); text-transform:uppercase; opacity:0.7;">The Horse</div></div>
+      <div style="text-align:center;"><div style="font-size:2.5rem; margin-bottom:0.5rem;">🦅</div><div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--parchment-dark); text-transform:uppercase; opacity:0.7;">The Eagle</div></div>
+      <div style="text-align:center;"><div style="font-size:2.5rem; margin-bottom:0.5rem;">⛺</div><div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--parchment-dark); text-transform:uppercase; opacity:0.7;">The Yurt</div></div>
+      <div style="text-align:center;"><div style="font-size:2.5rem; margin-bottom:0.5rem;">🌾</div><div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--parchment-dark); text-transform:uppercase; opacity:0.7;">Steppe Grass</div></div>
+      <div style="text-align:center;"><div style="font-size:2.5rem; margin-bottom:0.5rem;">🏹</div><div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--parchment-dark); text-transform:uppercase; opacity:0.7;">The Bow</div></div>
+      <div style="text-align:center;"><div style="font-size:2.5rem; margin-bottom:0.5rem;">🌅</div><div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--parchment-dark); text-transform:uppercase; opacity:0.7;">The Horizon</div></div>
+    </div>
+  </div>
+
+  <footer style="background:#060f05; padding:2.5rem; text-align:center; border-top:1px solid rgba(80,140,50,0.15);">
+    <p style="color:var(--parchment-dark); font-style:italic; opacity:0.5; font-size:0.85rem;">The steppe has no beginning and no end — only the horizon, always receding, always calling.</p>
+  </footer>
+</div>
 </body>
 </html>
