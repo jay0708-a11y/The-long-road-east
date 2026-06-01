@@ -581,16 +581,59 @@ h1.hero-title span { color: var(--gold-bright); }
   opacity: 0.85;
 }
 
-.city-img-placeholder {
-  width: 100%; height: 100px;
-  background: linear-gradient(135deg, rgba(201,146,42,0.1), rgba(26,58,92,0.2));
-  border: 1px dashed rgba(201,146,42,0.2);
+.city-img-wrap {
+  width: 100%; height: 180px;
+  margin-bottom: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1208, #0d1a2a);
+}
+
+.city-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.city-img-wrap img.loaded { opacity: 1; }
+.city-img-wrap img:hover { transform: scale(1.04); }
+
+.city-img-wrap .img-loading {
+  position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  color: var(--gold);
+  flex-direction: column; gap: 0.5rem;
+  color: rgba(201,146,42,0.5);
   font-style: italic;
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-  opacity: 0.5;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.city-img-wrap .img-loading.hidden { opacity: 0; }
+
+.city-img-spinner {
+  width: 22px; height: 22px;
+  border: 2px solid rgba(201,146,42,0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.city-img-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(0deg, rgba(44,24,16,0.85) 0%, transparent 100%);
+  padding: 0.6rem 0.8rem 0.4rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: rgba(232,184,75,0.7);
+  text-transform: uppercase;
+  pointer-events: none;
 }
 
 .city-budget-tag {
@@ -1272,10 +1315,10 @@ footer p {
       <p class="hero-subtitle">A Dream Across the Silk Road</p>
       <div class="hero-divider">🐪</div>
       <p class="hero-intro">
-        For as long as I can remember, the Silk Road has called to me — those ancient caravan trails
-        winding through deserts, mountain passes, and legendary cities where East met West, where silk
-        was traded for glass, and ideas traveled faster than armies. This is my lifelong dream.
-        A journey 7,000 miles long, 2,000 years in the making.
+        My father took me around the world before I knew what the world was. He put Marco Polo's
+        <em>Travels</em> in my hands, and I never recovered. The Silk Road feels forgotten — yet it is
+        still very much alive. And the past, I have always believed, holds secrets and lessons
+        we have barely begun to learn from. This is my journey to find them.
       </p>
       <a href="#" class="hero-cta" onclick="showPage('route')">Explore the Route →</a>
     </div>
@@ -1338,21 +1381,25 @@ footer p {
       <div class="story-text">
         <h2>A Lifelong Dream<br>Born Between Two Worlds</h2>
         <p>
-          My obsession began with a dog-eared copy of Ibn Battuta's <em>Rihla</em> that I found in a 
-          secondhand bookshop. Here was a man who had walked 75,000 miles across the medieval world,
-          eating, arguing, marveling his way from Morocco to Mali to Malacca. I wanted that.
+          My obsession began with my father taking me all around the world — and with a copy of
+          <em>Marco Polo's Travels</em> that opened a door I have never been able to close. The more
+          I learned, the more I wanted to see it for myself. The Silk Road feels <em>forgotten</em>
+          to the modern world, yet it is still very much alive — in the cities, the food, the faces,
+          the architecture that lines every mile of the route.
+        </p>
+        <p>
+          I also deeply admire the past. History holds so many secrets still waiting to be uncovered,
+          and in many ways those who walked these roads before us have far more to teach us than we
+          give them credit for. Standing where a Tang dynasty merchant once stood, or sleeping in a
+          caravanserai that sheltered travellers a thousand years ago — that connection to something
+          larger than oneself is what drives me.
         </p>
         <p>
           Over the years I've managed to visit three cities on the route. <em>Istanbul</em> stopped my heart —
           that impossible city straddling two continents, its minarets and Byzantine domes jostling 
           for the same sky. Then came <em>Lanzhou</em> and <em>Xi'an</em>, the great eastern terminus, where 
-          terracotta warriors guard an emperor's eternal rest.
-        </p>
-        <p>
-          But the vast middle — Iran, Afghanistan, Uzbekistan, the Taklamakan — remains a dream
-          I am actively planning, researching, and saving for. This site is my living notebook.
-          Every city, every route, every caravanserai is one step closer to walking in the dust
-          of those ancient merchants.
+          terracotta warriors guard an emperor's eternal rest. But the vast middle remains a dream
+          I am actively planning for. This site is my living notebook.
         </p>
       </div>
       <div class="story-ornament">
@@ -2086,6 +2133,8 @@ const CITIES = [
   {
     num: '01', name: 'Istanbul', ancient: 'Constantinople', country: 'Turkey',
     visited: true,
+    unsplashQuery: 'Istanbul Hagia Sophia Turkey',
+    wikiQuery: 'Istanbul',
     historical: 'Capital of the Byzantine and Ottoman Empires, Constantinople was the gateway between Europe and Asia. Its position on the Bosphorus made it the western terminus of the Silk Road for centuries.',
     modern: 'One of the world\'s great cities, bridging Europe and Asia literally and culturally. The Grand Bazaar, Hagia Sophia, and Blue Mosque are unmissable.',
     travel: 'I visited in autumn — the light on the Bosphorus at sunset is unlike anything else on earth. Stay in Sultanahmet to be within walking distance of everything.',
@@ -2094,6 +2143,8 @@ const CITIES = [
   {
     num: '02', name: 'Damascus', ancient: 'Dimashq', country: 'Syria',
     visited: false,
+    unsplashQuery: 'Damascus Syria ancient city mosque',
+    wikiQuery: 'Damascus',
     historical: 'Possibly the world\'s oldest continuously inhabited city. A major early Islamic capital and Silk Road hub where goods from the Mediterranean met those from Mesopotamia.',
     modern: 'Currently inaccessible due to ongoing conflict. Check current advisories carefully before planning.',
     travel: 'The Umayyad Mosque and the ancient souk are legendary. This city must wait until stability returns.',
@@ -2102,6 +2153,8 @@ const CITIES = [
   {
     num: '03', name: 'Aleppo', ancient: 'Halab', country: 'Syria',
     visited: false,
+    unsplashQuery: 'Aleppo Syria citadel ancient',
+    wikiQuery: 'Aleppo',
     historical: 'One of the oldest cities in the world, Aleppo\'s souk was the most famous on the Silk Road after Constantinople. Its citadel has been inhabited since the 3rd millennium BCE.',
     modern: 'Severely damaged in the Syrian Civil War but reconstruction is underway. Requires careful planning.',
     travel: 'The citadel and its souks, when accessible, represent the Silk Road at its most visceral and alive.',
@@ -2110,6 +2163,8 @@ const CITIES = [
   {
     num: '04', name: 'Mosul', ancient: 'Nineveh', country: 'Iraq',
     visited: false,
+    unsplashQuery: 'Nineveh Iraq ancient ruins Mesopotamia',
+    wikiQuery: 'Mosul',
     historical: 'Near ancient Nineveh, capital of the Assyrian Empire. Mosul was a crossing point of the Tigris and a key node connecting Syria, Persia, and Anatolia.',
     modern: 'Rebuilding after ISIS occupation. The old city is partially restored. Exercise extreme caution.',
     travel: 'Nineveh Archaeological Park and the reconstructed old city are the primary draws for now.',
@@ -2118,6 +2173,8 @@ const CITIES = [
   {
     num: '05', name: 'Baghdad', ancient: 'Madinat al-Salam', country: 'Iraq',
     visited: false,
+    unsplashQuery: 'Baghdad Iraq Tigris river city',
+    wikiQuery: 'Baghdad',
     historical: 'The Abbasid Caliphate\'s Round City was the intellectual capital of the medieval world. At its peak, Baghdad held 1.5 million people — the world\'s largest city. The House of Wisdom was the era\'s greatest library.',
     modern: 'Increasingly accessible to visitors. The Iraqi Museum, with its extraordinary antiquities collection, is world-class.',
     travel: 'Organize through a reputable local tour company. Register with your embassy. The Mutanabbi Street book market is iconic.',
@@ -2126,6 +2183,8 @@ const CITIES = [
   {
     num: '06', name: 'Tabriz', ancient: 'Tauris', country: 'Iran',
     visited: false,
+    unsplashQuery: 'Tabriz Iran bazaar historic architecture',
+    wikiQuery: 'Tabriz',
     historical: 'Capital of the Ilkhanid and later Safavid dynasties. Tabriz\'s bazaar is the world\'s largest covered market (UNESCO) and a Silk Road hub connecting the Caspian with Mesopotamia.',
     modern: 'A vibrant Iranian city with a distinctive Azerbaijani character. The bazaar alone justifies the visit.',
     travel: 'Iranians are extraordinarily hospitable. The Tabriz bazaar is a full-day experience. Blue Mosque is stunning.',
@@ -2134,6 +2193,8 @@ const CITIES = [
   {
     num: '07', name: 'Tehran', ancient: 'Ray', country: 'Iran',
     visited: false,
+    unsplashQuery: 'Tehran Iran Golestan Palace skyline',
+    wikiQuery: 'Tehran',
     historical: 'The nearby city of Ray (now a suburb) was one of the Silk Road\'s most important cities in the medieval period, described by Arab geographers as the greatest city of the East.',
     modern: 'Modern capital with world-class museums, including the National Museum and the extraordinary Golestan Palace.',
     travel: 'The National Jewels Museum alone justifies a Tehran stopover — the Iranian Crown Jewels are among the world\'s finest.',
@@ -2142,6 +2203,8 @@ const CITIES = [
   {
     num: '08', name: 'Mashhad', ancient: 'Tus / Nishapur region', country: 'Iran',
     visited: false,
+    unsplashQuery: 'Mashhad Iran Imam Reza shrine mosque',
+    wikiQuery: 'Mashhad',
     historical: 'City of the Imam Reza Shrine — the holiest city in Iran and one of the holiest in Shia Islam. The nearby ruined city of Nishapur was once among the world\'s great cities.',
     modern: 'Non-Muslims can visit the outer precincts of the shrine complex but not the inner sanctuary. The city\'s atmosphere is unique.',
     travel: 'Nearby Nishapur is the birthplace of Omar Khayyam and the poet Attar. The ruined city repays exploration.',
@@ -2150,6 +2213,8 @@ const CITIES = [
   {
     num: '09', name: 'Herat', ancient: 'Aria / Alexandria Ariana', country: 'Afghanistan',
     visited: false,
+    unsplashQuery: 'Herat Afghanistan Friday Mosque minaret',
+    wikiQuery: 'Herat',
     historical: 'Founded or rebuilt by Alexander the Great. Herat was one of Central Asia\'s most important cities — a Timurid Renaissance capital whose Friday Mosque is among Islam\'s finest buildings.',
     modern: 'Currently under Taliban control. Not safe for independent foreign visitors at this time.',
     travel: 'The Friday Mosque, the Citadel of Alexander, and the Timurid minarets are among Central Asia\'s finest treasures.',
@@ -2158,6 +2223,8 @@ const CITIES = [
   {
     num: '10', name: 'Balkh', ancient: 'Bactra / Zariaspa', country: 'Afghanistan',
     visited: false,
+    unsplashQuery: 'Balkh Afghanistan ancient ruins desert',
+    wikiQuery: 'Balkh',
     historical: 'Called "Mother of Cities" by Arab geographers, Balkh was one of the ancient world\'s greatest cities. It was a Zoroastrian, Buddhist, Greek, and then Islamic center — the birthplace of Rumi.',
     modern: 'Near Mazar-i-Sharif in northern Afghanistan. Currently inaccessible.',
     travel: 'The ruins of ancient Bactra and the shrine of Khwaja Abu Nasr Parsa are extraordinary historically.',
@@ -2166,6 +2233,8 @@ const CITIES = [
   {
     num: '11', name: 'Mazar-i-Sharif', ancient: 'Balkh region', country: 'Afghanistan',
     visited: false,
+    unsplashQuery: 'Mazar-i-Sharif Blue Mosque Afghanistan shrine',
+    wikiQuery: 'Mazar-i-Sharif',
     historical: 'Site of the Blue Mosque (Shrine of Ali), one of Islam\'s holiest sites according to some traditions. Historically part of the greater Balkh region.',
     modern: 'Not currently safe for independent travel. Monitor advisories for future change.',
     travel: 'The Blue Mosque is architecturally extraordinary — a sea of blue tiles in a courtyard full of white pigeons.',
@@ -2174,6 +2243,8 @@ const CITIES = [
   {
     num: '12', name: 'Bukhara', ancient: 'Bokhara', country: 'Uzbekistan',
     visited: false,
+    unsplashQuery: 'Bukhara Uzbekistan Kalon minaret Silk Road',
+    wikiQuery: 'Bukhara',
     historical: 'One of Islam\'s great intellectual centers. Home of Avicenna (Ibn Sina). The Ark fortress, Kalon Minaret, and Samanid Mausoleum are among Central Asia\'s finest monuments.',
     modern: 'A UNESCO World Heritage city that has maintained much of its old character. Excellent tourist facilities.',
     travel: 'Stay in a traditional caravanserai (now a hotel). The old city is compact and walkable. Evening light on the Kalon is magical.',
@@ -2182,6 +2253,8 @@ const CITIES = [
   {
     num: '13', name: 'Samarkand', ancient: 'Marakanda', country: 'Uzbekistan',
     visited: false,
+    unsplashQuery: 'Samarkand Registan Uzbekistan Silk Road',
+    wikiQuery: 'Samarkand',
     historical: 'Perhaps the most storied city on the Silk Road. The Registan — three madrasas framing a central square — is one of the world\'s architectural masterpieces. Timur made it the capital of his empire.',
     modern: 'The undisputed highlight of Central Asian tourism. High-speed train from Tashkent (2 hours). Overwhelming.',
     travel: 'The Registan at sunset when the crowds thin is a spiritual experience. The Shah-i-Zinda necropolis is equally extraordinary.',
@@ -2190,6 +2263,8 @@ const CITIES = [
   {
     num: '14', name: 'Tashkent', ancient: 'Shash / Chach', country: 'Uzbekistan',
     visited: false,
+    unsplashQuery: 'Tashkent Uzbekistan city architecture',
+    wikiQuery: 'Tashkent',
     historical: 'One of Central Asia\'s oldest cities, though much was destroyed by a 1966 earthquake and Soviet rebuilding. The Khast Imam complex preserves one of the world\'s oldest Qurans.',
     modern: 'Modern capital with good international connections. Gateway to the rest of Uzbekistan.',
     travel: 'Primarily a transit hub but the Khast Imam and State History Museum are worthwhile. Good food scene.',
@@ -2198,6 +2273,8 @@ const CITIES = [
   {
     num: '15', name: 'Kashgar', ancient: 'Kashi / Shule', country: 'China (Xinjiang)',
     visited: false,
+    unsplashQuery: 'Kashgar Xinjiang China old city market',
+    wikiQuery: 'Kashgar',
     historical: 'The great oasis city where the northern and southern branches of the Silk Road reunited after skirting the Taklamakan Desert. Called "the crossroads of the world" by Victorian travelers.',
     modern: 'The old city has been partially demolished but remains evocative. The Sunday market is still among Asia\'s most extraordinary experiences.',
     travel: 'The camel market, the old city mosque, and the Id Kah Square. Expect police checkpoints and hotel registration requirements throughout Xinjiang.',
@@ -2206,6 +2283,8 @@ const CITIES = [
   {
     num: '16', name: 'Jade Gate Pass', ancient: 'Yumenguan', country: 'China (Gansu)',
     visited: false,
+    unsplashQuery: 'Yumenguan Jade Gate Pass China Gobi desert ruins',
+    wikiQuery: 'Yumenguan',
     historical: 'The western gate of ancient China, through which silk flowed westward and everything foreign entered eastward. The Han dynasty beacon towers still stand in the desert.',
     modern: 'Archaeological site west of Dunhuang. The ruined fort and beacon towers are extraordinarily evocative.',
     travel: 'Combine with Yangguan Pass (the other Han dynasty gate) in a half-day excursion from Dunhuang.',
@@ -2214,6 +2293,8 @@ const CITIES = [
   {
     num: '17', name: 'Dunhuang', ancient: 'Sha Zhou', country: 'China (Gansu)',
     visited: false,
+    unsplashQuery: 'Dunhuang Mogao Caves sand dunes China',
+    wikiQuery: 'Dunhuang',
     historical: 'Oasis city at the edge of the Gobi, home to the Mogao Caves — 492 Buddhist cave temples containing the world\'s finest collection of Buddhist art spanning 1,000 years and multiple civilizations.',
     modern: 'Major tourist site. The Mogao Caves require advance booking. The Crescent Lake and Singing Sand Dunes are spectacular.',
     travel: 'Book Mogao Caves tickets weeks in advance. Rent a bike to the sand dunes at sunset. Stay at least 2 nights.',
@@ -2222,6 +2303,8 @@ const CITIES = [
   {
     num: '18', name: 'Jiayuguan', ancient: 'Jiayu Pass', country: 'China (Gansu)',
     visited: false,
+    unsplashQuery: 'Jiayuguan Great Wall fortress China Gansu',
+    wikiQuery: 'Jiayuguan',
     historical: 'The western end of the Great Wall of China — literally the "First and Greatest Pass Under Heaven." Beyond this gate lay the Western Regions and the beginning of the true Silk Road.',
     modern: 'The fortress is remarkably well-preserved. The surrounding landscape of desert and snow-capped mountains is dramatic.',
     travel: 'Combine with the overhanging Great Wall nearby. Easy day trip from Jiayuguan city.',
@@ -2230,6 +2313,8 @@ const CITIES = [
   {
     num: '19', name: 'Lanzhou', ancient: 'Jincheng', country: 'China (Gansu)',
     visited: true,
+    unsplashQuery: 'Lanzhou Yellow River China Gansu bridge',
+    wikiQuery: 'Lanzhou',
     historical: 'Ancient crossing point of the Yellow River and the last major Han city before the Western Regions. The Bingling Temple caves, 80km away, preserve extraordinary Tang dynasty Buddhist sculpture.',
     modern: 'Industrial city on the Yellow River famous for its beef noodles (the definitive Lanzhou lamian). Gateway to the Hexi Corridor.',
     travel: 'I came here to eat noodles and see the Yellow River. The White Pagoda Hill park has good views. The Bingling Temple is unmissable.',
@@ -2238,6 +2323,8 @@ const CITIES = [
   {
     num: '20', name: "Xi'an", ancient: "Chang'an", country: 'China (Shaanxi)',
     visited: true,
+    unsplashQuery: "Xi'an terracotta warriors city wall China",
+    wikiQuery: "Xi'an",
     historical: "The eastern terminus of the Silk Road and capital of China under 13 dynasties. Chang'an was the world's largest city during the Tang dynasty — a truly international metropolis where Persians, Arabs, Sogdians, and Japanese all maintained communities.",
     modern: 'One of China\'s most visited cities. The Terracotta Warriors, the Muslim Quarter, and the ancient city walls are extraordinary.',
     travel: "I rode the city walls on a bicycle at dusk — one of my greatest travel memories. The Muslim Quarter at night is a feast. The Terracotta Warriors exceeded all expectations.",
@@ -2263,7 +2350,17 @@ function buildCityCards() {
         </div>
       </div>
       <div class="city-card-body">
-        <div class="city-img-placeholder">[ Image: ${c.name} / ${c.ancient} ]</div>
+        <div class="city-img-wrap" id="wrap-${i}">
+          <div class="img-loading" id="loader-${i}">
+            <div class="city-img-spinner"></div>
+            <span>Loading ${c.name}…</span>
+          </div>
+          <img id="img-${i}" alt="${c.name}"
+            onload="this.classList.add('loaded'); var l=document.getElementById('loader-${i}'); if(l) l.classList.add('hidden');"
+            onerror="this.style.display='none'; var l=document.getElementById('loader-${i}'); if(l) l.innerHTML='<span style=\'opacity:0.4\'>📷 Image unavailable</span>';"
+          >
+          <div class="city-img-caption">${c.name} · ${c.country}</div>
+        </div>
         <div class="city-details-grid">
           <div class="city-detail-block">
             <h4>Historical Importance</h4>
@@ -2287,6 +2384,62 @@ function buildCityCards() {
 function toggleCard(i) {
   const card = document.getElementById('city-' + i);
   card.classList.toggle('open');
+  if (card.classList.contains('open')) {
+    loadCityImage(i);
+  }
+}
+
+// ── WIKIMEDIA IMAGE LOADER ──
+const imageCache = {};
+
+async function loadCityImage(i) {
+  const img = document.getElementById('img-' + i);
+  const loader = document.getElementById('loader-' + i);
+  if (!img || img.dataset.loaded) return;
+  img.dataset.loaded = 'true';
+
+  const city = CITIES[i];
+  const query = city.wikiQuery;
+
+  // Check cache
+  if (imageCache[i]) {
+    img.src = imageCache[i];
+    return;
+  }
+
+  try {
+    // Search Wikimedia Commons for a relevant image
+    const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(query)}&prop=pageimages&format=json&pithumbsize=900&origin=*`;
+    const res = await fetch(searchUrl);
+    const data = await res.json();
+    const pages = data.query.pages;
+    const page = Object.values(pages)[0];
+
+    if (page && page.thumbnail && page.thumbnail.source) {
+      imageCache[i] = page.thumbnail.source;
+      img.src = page.thumbnail.source;
+    } else {
+      // Fallback: try Wikimedia Commons search
+      const commonsUrl = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrnamespace=6&gsrsearch=${encodeURIComponent(query + ' landmark')}&gsrlimit=1&prop=imageinfo&iiprop=url&iiurlwidth=900&format=json&origin=*`;
+      const res2 = await fetch(commonsUrl);
+      const data2 = await res2.json();
+      if (data2.query && data2.query.pages) {
+        const p = Object.values(data2.query.pages)[0];
+        if (p && p.imageinfo && p.imageinfo[0]) {
+          const url = p.imageinfo[0].thumburl || p.imageinfo[0].url;
+          imageCache[i] = url;
+          img.src = url;
+        } else {
+          throw new Error('no image');
+        }
+      } else {
+        throw new Error('no results');
+      }
+    }
+  } catch (e) {
+    if (img) img.style.display = 'none';
+    if (loader) loader.innerHTML = '<span style="opacity:0.35;font-style:italic;">📷 No image found</span>';
+  }
 }
 
 // ── PAGE NAVIGATION ──
